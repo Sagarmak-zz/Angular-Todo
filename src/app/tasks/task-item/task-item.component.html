@@ -1,0 +1,28 @@
+<div class="card">
+        <div class="card-content">
+          <p class="title">
+            <span [ngStyle]="{textDecoration: getStatus(task.completed)}">
+            {{ task.title }} 
+          </span>
+            <span class="icon">
+              <i *ngIf="!task.completed" class="fa fa-times" aria-hidden="true" 
+              (click)="toggleCompleted(task);"></i>
+              <i *ngIf="task.completed" class="fa fa-check" aria-hidden="true"
+              (click)="toggleCompleted(task);"></i>
+            </span>
+          </p>
+        </div>
+        <footer class="card-footer">
+          <a (click)="editTodo(task, i)" class="card-footer-item">
+            <span>
+              Edit
+            </span>
+          </a>
+          <a (click)="deleteTodo(i)" class="card-footer-item">
+            <span>
+              Delete
+            </span>
+          </a>
+        </footer>
+        
+      </div>

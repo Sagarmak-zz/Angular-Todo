@@ -1,0 +1,16 @@
+
+<div class="card-pane-showpane" *ngIf="tasks.length != 0; else noTask">
+    <div class="show" *ngFor="let task of tasks; let i = index;">
+        
+        <app-task-item [task]="task" [i]="i" 
+        (toggleCompleteEventEmit)="toggleCompleted($event)"
+        (deleteTodoEventEmit)="deletedTodo($event)"
+        (editTodoEventEmit)="editedTodo($event)">
+        </app-task-item>
+        
+    </div>
+</div>
+
+<ng-template class="card-pane-nopane" #noTask>
+    <h1 class="box title">No Tasks to show!</h1>
+</ng-template>  

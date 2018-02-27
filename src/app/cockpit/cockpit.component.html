@@ -1,0 +1,17 @@
+<div class="field is-grouped" *ngIf="!editTask">
+    <div class="control">
+      <input class="input" type="text" placeholder="Add a Task" [(ngModel)]="newTask">
+    </div>
+    <div class="control">
+      <a class="button is-info" (click)="sendTaskToApp();"> Add </a>
+    </div>
+  </div>
+
+  <div class="field is-grouped" *ngIf="editTask">
+    <div class="control">
+      <input class="input" type="text" placeholder="Edit a Task" [(ngModel)]="editedTask">
+    </div>
+    <div class="control">
+      <a class="button is-primary" (click)="changeEdit()"> Edit </a>
+    </div>
+  </div>
